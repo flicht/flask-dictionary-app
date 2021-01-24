@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}"{{ post['word'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Word</label>
+    <p>{{ post['word'] }}</p>
+    <label for="body">Definition</label>
+    <p>{{ post['definition'] }}</p>
+  </form>
+    {% if g.user['id'] == post['author_id'] %}
+        <a class="action" href="{{ url_for('definitions.update', id=post['id']) }}">Edit</a>
+    {% endif %}
+  <hr>
+{% endblock %}

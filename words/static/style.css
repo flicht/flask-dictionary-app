@@ -4,21 +4,19 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
     /* font-family: 'Bodoni Moda', serif; */
     padding: 1rem;
-    background-color: rgb(245, 253, 255);
+    background-color: rgb(254, 255, 245);
 }
 
-background: #eee;
 body {
     /* font-family: 'Bodoni Moda', serif; */
     max-width: 960px;
     margin: 0 auto;
-    background: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
     /* font-family: 'Bodoni Moda', serif; */
     font-family: 'Source Sans Pro', sans-serif;
-    color: crimson;
+    color: #111;
     margin: 1rem 0;
   }
   
@@ -32,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   nav {
-    background: rgb(245, 253, 255);;
+    background: gb(254, 255, 245);
     display: flex;
     align-items: center;
     padding: 0 0.5rem;
@@ -44,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav h1 a {
-    color: crimson;
+    color: #eb5348;
     text-decoration: none;
     font-size: 2em;
     padding: 0.25rem 0.5rem;
@@ -97,7 +95,8 @@ nav h1 a {
   }
   
   .post > header h1 a {
-    color: #6686c2;
+    color: #3C5C97;
+    /* color: #668; */
     text-decoration: none;
     font-family: 'Bodoni Moda', serif;
     font-size: 1.7em;

@@ -5,14 +5,16 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Word</label>
-    <p>{{ post['word'] }}</p>
-    <label for="body">Definition</label>
-    <p>{{ post['definition'] }}</p>
-  </form>
-    {% if g.user['id'] == post['author_id'] %}
+<article class="post">
+    <header>
+      <div>
+        <h1>{{ post['word'].lower() }}</h1>
+        <div class="about">by {{ post['username'] }} at {{post['created'].strftime('%H:%M')}} on {{ post['created'].strftime('%d/%m/%Y') }}</div>
+      </div>
+      {% if g.user['id'] == post['author_id'] %}
         <a class="action" href="{{ url_for('definitions.update', id=post['id']) }}">Edit</a>
-    {% endif %}
-  <hr>
+      {% endif %}
+    </header>
+    <p class="body">{{ post['definition'].lower() }}</p>
+  </article>
 {% endblock %}

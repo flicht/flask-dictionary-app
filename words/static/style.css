@@ -94,12 +94,20 @@ nav h1 a {
     flex: auto;
   }
   
-  .post > header h1 a {
+  .post > header h1 {
     color: #3C5C97;
     /* color: #668; */
     text-decoration: none;
     font-family: 'Bodoni Moda', serif;
     font-size: 1.7em;
+    margin-bottom: 0;
+}
+
+  .post > header h1 a {
+    color: #3C5C97;
+    /* color: #668; */
+    text-decoration: none;
+    font-family: 'Bodoni Moda', serif;
     margin-bottom: 0;
 }
   .post > header h1 a:hover {

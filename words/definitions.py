@@ -18,6 +18,28 @@ def index():
     ).fetchall()
     return render_template('definitions/index.html', definitions_list=definitions)
 
+@bp.route('/<author_id>/my_words')
+def my_words(author_id):
+    db = get_db()
+    definitions = db.execute(
+        'SELECT d.id, word, definition, created, author_id, username'
+        ' FROM definitions d JOIN user u ON d.author_id = u.id WHERE author_id = ?'
+        ' ORDER BY created DESC', (author_id,)
+    ).fetchall()
+    return render_template('definitions/index.html', definitions_list=definitions)
+
+@bp.route('/random')
+def random():
+    db = get_db()
+    definitions = db.execute(
+        'SELECT d.id, word, definition, created, author_id, username'
+        ' FROM definitions d JOIN user u ON d.author_id = u.id'
+        ' ORDER BY RANDOM() LIMIT 1'
+    ).fetchall()
+    return render_template('definitions/index.html', definitions_list=definitions)
+
+
+
 @bp.route('/add', methods=['GET', 'POST'])
 @login_required
 def add():
@@ -55,7 +77,7 @@ def get_definition(id, check_author=True):
         abort(404, "Definition id {0} doesn't exist.".format(id))
 
     if check_author and definition['author_id'] != g.user['id']:
-        abort(403)
+        abort(403, "Not permitted to edit this one")
 
     return definition
 

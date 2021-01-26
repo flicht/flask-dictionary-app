@@ -21,7 +21,13 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   a {
-    color: #717ce6;
+    color: #78a07a;
+    text-decoration: none;
+    
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
   
   hr {
@@ -58,6 +64,11 @@ nav h1 a {
   nav ul li a, nav ul li span, header .action {
     display: block;
     padding: 0.5rem;
+  }
+
+  header > div > a {
+    font-size: 1.2em;
+    padding: 0.2em
   }
   
   .content {

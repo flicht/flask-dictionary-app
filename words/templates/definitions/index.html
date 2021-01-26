@@ -5,11 +5,20 @@
   {% if g.user %}
     <a class="action" href="{{ url_for('definitions.add') }}">Add Definition</a>
     {% else %}
-    Register to add a definition
   {% endif %}
 {% endblock %}
 
 {% block content %}
+  <header>
+    <div>
+      <a href="{{ url_for('definitions.index') }}">All Words</a>
+      <a href="{{ url_for('definitions.random') }}">Random</a>
+      {% if g.user %}
+        <a href="{{ url_for('definitions.my_words', author_id=g.user['id']) }}">My Words</a>
+      {% endif %}
+  </div>
+    
+  </header>
   {% for defi in definitions_list %}
     <article class="post">
       <header>

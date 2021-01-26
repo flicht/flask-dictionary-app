@@ -4,6 +4,8 @@
   <h1>{% block title %}Definitions{% endblock %}</h1>
   {% if g.user %}
     <a class="action" href="{{ url_for('definitions.add') }}">Add Definition</a>
+    {% else %}
+    Register to add a definition
   {% endif %}
 {% endblock %}
 

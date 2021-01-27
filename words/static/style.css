@@ -83,8 +83,9 @@ nav h1 a {
   
   .content > header h1 {
     flex: auto;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 1rem 0 0.25rem 0;
+    font-style: italic;
   }
   
   .flash {
